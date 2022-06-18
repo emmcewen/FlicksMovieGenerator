@@ -2,113 +2,114 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-    <link rel="stylesheet" href="./Assets/style.css">
-    <title>Flicks</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <link rel="stylesheet" href="./Assets/style.css">
+  <title>Flicks</title>
 </head>
 <header>
-    <h1 id="title">Flicks</h1>
+  <h1 id="title">Flicks</h1>
 </header>
 <main>
-    <p class="instructions">Click buttons to generate top 5 movies for selected genre. Keep clicking to generate random
-        results.</p>
-    <p id="last-searched-genre">You last searched </p>
-    <div class="row">
-        <div class="grid col s12"><span class="flow-text">
+  <p class="instructions">Click buttons to generate top 5 movies for selected genre. Keep clicking to generate random
+    results.</p>
+  <p id="last-searched-genre">You last searched <span id="genre"></span></p>
+  <div class="row">
+    <div class="grid col s12"><span class="flow-text">
 
-               <div id="buttons" class="col s12 m6 l3"> 
-                    <section id="button-container" itemid="my-text">
-                      <select class="browser-default">
-                        <option value="" disabled selected>Select Genre</option>
-                        <option value="Action/Adventure">Action/Adventure</option>
-                        <option value="Romance">Romance</option>
-                        <option value="Sci-Fi">Sci-Fi</option>
-                        <option value="Comedy">Comedy</option>
-                        <option value="Horror">Horror</option>
-                        <input type="submit" value="submit" onclick="">
-                      </select>
+      <div id="buttons" class="col s12 m6 l3">
+        <section id="button-container">
+            <select class="browser-default" id="my-text">
+                <option value="" disabled selected>Select Genre</option>
+                <option value="Action/Adventure">Action/Adventure</option>
+                <option value="Romance">Romance</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Horror">Horror</option>
+                <input type="submit" value="submit" onclick="putDropDownValueIntoLocalStorage()">
+            </select>
+        </section>
+    </div>
 
-
-                        <!-- <ul>
+          <!-- <ul>
                             <li><button id="action" type="button">Action/Adventure</button></li>
                             <li><button id="romance" type="button" >Romance</button></li>
                             <li><button id="sci-fi" type="button">Sci-Fi</button></li>
                             <li><button id="comedy" type="button">Comedy</button></li>
                             <li><button id="horror" type="button">Horror</button></li>
                         </ul> -->
-                    </section>
+          <!-- </section> -->
 
-            
+
+        <!-- </div> -->
+        <div id="container" class="results col s12 m4 l9">
+          <div class="row">
+            <div class="col s12 m6">
+              <div class="card-1 blue-grey darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">Card Title</span>
+                  <p id="description-1">insert description here</p>
                 </div>
-                <div id="container" class="results col s12 m4 l9">
-                    <div class="row">
-                        <div class="col s12 m6">
-                          <div class="card-1 blue-grey darken-1">
-                            <div class="card-content white-text">
-                              <span class="card-title">Card Title</span>
-                              <p id="description-1">insert description here</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col s12 m6">
-                          <div class="card-2 blue-grey darken-1">
-                            <div class="card-content white-text">
-                              <span class="card-title">Card Title</span>
-                              <p id="description-2">insert description here</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                      <div class="row">
-                        <div class="col s12 m6">
-                          <div class="card-3 blue-grey darken-1">
-                            <div class="card-content white-text">
-                              <span class="card-title">Card Title</span>
-                              <p id="description-3">insert description here</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col s12 m6">
-                          <div class="card-4 blue-grey darken-1">
-                            <div class="card-content white-text">
-                              <span class="card-title">Card Title</span>
-                              <p id="description-4">insert description here</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col s12 m6">
-                          <div class="card-5 blue-grey darken-1">
-                            <div class="card-content white-text">
-                              <span class="card-title">Card Title</span>
-                              <p id="description-5">insert description here</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-
-                    </div>
-
-                </div>
+              </div>
             </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m6">
+              <div class="card-2 blue-grey darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">Card Title</span>
+                  <p id="description-2">insert description here</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card-3 blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">Card Title</span>
+            <p id="description-3">insert description here</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card-4 blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">Card Title</span>
+            <p id="description-4">insert description here</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card-5 blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">Card Title</span>
+            <p id="description-5">insert description here</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  </div>
+  </div>
+  </div>
 </main>
 
 <body>
-    <script src="./Assets/javascript/API_1.js"></script>
-    <script src="./Assets/javascript/API_2.js"></script>
-    <script src="./Assets/javascript/localstorage.js"></script>
+  <script src="./Assets/javascript/API_1.js"></script>
+  <script src="./Assets/javascript/API_2.js"></script>
+  <script src="./Assets/javascript/localstorage.js"></script>
 </body>
 
 </html>
