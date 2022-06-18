@@ -19,12 +19,14 @@ var scifiTitleArray = []
 var romanceTitleArray = []
 var actionTitleArray = []
 
+var promiseArray=[]
 
 for (i = 1; i < 100; i++) {
-    fetch("https://api.themoviedb.org/3/movie/popular?api_key=74202059f4cf77ba57c6c082dbb67f3d&language=en-US&page=" + i)
+    
+    var prom = fetch("https://api.themoviedb.org/3/movie/popular?api_key=74202059f4cf77ba57c6c082dbb67f3d&language=en-US&page="+i)
         .then(response => response.json())
         .then(function (data) {
-            console.log(data)
+            
             for (var i = 0; i < data.results.length; i++) {
                 if (data.results[i].genre_ids) {
 
@@ -32,7 +34,7 @@ for (i = 1; i < 100; i++) {
                     if (data.results[i].genre_ids[0] === 35) {
                         var title = data.results[i].original_title
                         comedyTitleArray.push(title)
-                        console.log("comedy array " + comedyTitleArray)
+                        
                         
 
 
@@ -41,28 +43,29 @@ for (i = 1; i < 100; i++) {
                     else if (data.results[i].genre_ids[0] === 12 || data.results[i].genre_ids[0] === 28) {
                         var title = data.results[i].original_title
                         actionTitleArray.push(title)
-                        console.log("action array " + actionTitleArray)
+                        
 
                     }
                     //search for horror
                     else if (data.results[i].genre_ids[0] === 27) {
                         var title = data.results[i].original_title
                         horrorTitleArray.push(title)
-                        console.log("horror array " + horrorTitleArray)
+                        
 
                     }
                     //search for romance
                     else if (data.results[i].genre_ids[0] === 10749) {
                         var title = data.results[i].original_title
                         romanceTitleArray.push(title)
-                        console.log("romance array " + romanceTitleArray)
+                        
 
                     }
                     //search for scifi
                     else if (data.results[i].genre_ids[0] === 878) {
                         var title = data.results[i].original_title
                         scifiTitleArray.push(title)
-                        console.log("scifi array " + scifiTitleArray)
+                        
+                      
 
                     }
                     
@@ -77,8 +80,21 @@ for (i = 1; i < 100; i++) {
             }
         })
         .catch(err => console.error(err))
+        promiseArray.push(prom)
 
 }
+console.log(promiseArray)
+Promise.all(promiseArray)
+    .then(function(){
+        console.log("action array: " + actionTitleArray)
+        console.log("horror array: " + horrorTitleArray)
+        console.log("comedy array: " +comedyTitleArray)
+        console.log("romance array: " +romanceTitleArray)
+        console.log("SciFi array: "+scifiTitleArray)
+    })
+
+
+
 
 
 
