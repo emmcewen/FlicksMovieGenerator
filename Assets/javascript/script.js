@@ -63,6 +63,7 @@ for (i = 1; i < 100; i++) {
                         var title = data.results[i].original_title
                         scifiTitleArray.push(title)
                         console.log("scifi array " + scifiTitleArray)
+                      
 
                     }
                     
@@ -79,6 +80,7 @@ for (i = 1; i < 100; i++) {
         .catch(err => console.error(err))
 
 }
+
 
 
 
