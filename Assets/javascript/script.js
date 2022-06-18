@@ -13,3 +13,10 @@ var description2El=document.querySelector("#description-2")
 var description3El=document.querySelector("#description-3")
 var description4El=document.querySelector("#description-4")
 var description5El=document.querySelector("#description-5")
+
+
+fetch("https://api.themoviedb.org/3/movie/popular?api_key=74202059f4cf77ba57c6c082dbb67f3d&language=en-US&page=1") 
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err))
+
