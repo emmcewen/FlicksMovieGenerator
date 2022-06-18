@@ -29,40 +29,59 @@ for (i = 1; i < 100; i++) {
                 if (data.results[i].genre_ids) {
 
                     //search for comedy
-                    if (data.results[i].genre_ids.includes(35)) {
+                    if (data.results[i].genre_ids[0] === 35) {
                         var title = data.results[i].original_title
                         comedyTitleArray.push(title)
+                        console.log("comedy array " + comedyTitleArray)
+                        
 
-                        console.log(comedyTitleArray)
+
                     }
                     //search for action adventure
-                    if (data.results[i].genre_ids.includes(12) || data.results[i].genre_id[0] === 28) {
+                    else if (data.results[i].genre_ids[0] === 12 || data.results[i].genre_ids[0] === 28) {
                         var title = data.results[i].original_title
                         actionTitleArray.push(title)
+                        console.log("action array " + actionTitleArray)
+
                     }
                     //search for horror
-                    if (data.results[i].genre_ids.includes(27)) {
+                    else if (data.results[i].genre_ids[0] === 27) {
                         var title = data.results[i].original_title
                         horrorTitleArray.push(title)
+                        console.log("horror array " + horrorTitleArray)
+
                     }
                     //search for romance
-                    if (data.results[i].genre_ids.includes(10749)) {
+                    else if (data.results[i].genre_ids[0] === 10749) {
                         var title = data.results[i].original_title
                         romanceTitleArray.push(title)
+                        console.log("romance array " + romanceTitleArray)
+
                     }
                     //search for scifi
-                    if (data.results[i].genre_ids.includes(878)) {
+                    else if (data.results[i].genre_ids[0] === 878) {
                         var title = data.results[i].original_title
                         scifiTitleArray.push(title)
+                        console.log("scifi array " + scifiTitleArray)
+
                     }
+                    
+                    
+                    
+                    
+                    
 
                 }
+
 
             }
         })
         .catch(err => console.error(err))
 
 }
+
+
+
 
 
 
