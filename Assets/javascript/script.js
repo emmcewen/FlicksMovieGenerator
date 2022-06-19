@@ -125,14 +125,14 @@ function displayMovie(){
            else if(selectText === "Comedy"){
             var randomIndex = Math.floor(math.random() * comedyTitleArray.length )
             for(var i=1;i<6;i++){
-                var cardSelect = document.getElementById("card-title"+i)
+                var cardSelect = document.querySelector("card-title"+i)
                 cardSelect.textContent = comedyTitleArray[randomIndex]
             }
                 
             }
 
         })
-
+    putDropDownValueIntoLocalStorage();
 }
 
 
