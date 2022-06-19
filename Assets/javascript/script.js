@@ -85,56 +85,67 @@ for (i = 1; i < 100; i++) {
 }
 console.log(promiseArray)
 
-function displayMovie(){
+function displayMovie() {
     Promise.all(promiseArray)
+
         .then(function () {
-            
+
+
             var selectText = document.getElementById("my-text").value;
-            if(selectText === "Action/Adventure"){
-                var randomIndex = Math.floor(math.random() * actionTitleArray.length )
-                for(var i=1;i<6;i++){
-                    var cardSelect = document.querySelector("card-title"+i)
-                    cardSelect.textContent = actionTitleArray[randomIndex]
+            
+            if (selectText === "Action/Adventure") {
+                
+                for (var i = 1; i < 6; i++) {
+                    var randomIndex = Math.floor(Math.random() * 50)
+                    console.log(randomIndex)
+                    console.log(actionTitleArray[randomIndex])
+                    var cardSelect = document.getElementById("card-title" + i)
+                    console.log(cardSelect)
+                    cardSelect.innerHTML = actionTitleArray[randomIndex]
                 }
-                
+
             }
-            else if(selectText === "Romance"){
-                var randomIndex = Math.floor(math.random() * romanceTitleArray.length )
-                for(var i=1;i<6;i++){
-                    var cardSelect = document.querySelector("card-title"+i)
-                    cardSelect.textContent = romanceTitleArray[randomIndex]
+            else if (selectText === "Romance") {
+               
+                for (var i = 1; i < 6; i++) {
+                    var randomIndex = Math.floor(Math.random() * 50)
+                    var cardSelect = document.getElementById("card-title" + i)
+                    cardSelect.innerHTML = romanceTitleArray[randomIndex]
                 }
-                
+
             }
-            else if(selectText === "Sci-Fi"){
-                var randomIndex = Math.floor(math.random() * scifiTitleArray.length )
-                for(var i=1;i<6;i++){
-                    var cardSelect = document.querySelector("card-title"+i)
-                    cardSelect.textContent = scifiTitleArray[randomIndex]
+            else if (selectText === "Sci-Fi") {
+                
+                for (var i = 1; i < 6; i++) {
+                    var randomIndex = Math.floor(Math.random() * 50)
+                    var cardSelect = document.getElementById("card-title" + i)
+                    cardSelect.innerHTML = scifiTitleArray[randomIndex]
                 }
-                
+
             }
-            else if(selectText === "Horror"){
-                var randomIndex = Math.floor(math.random() * horrorTitleArray.length )
-                for(var i=1;i<6;i++){
-                    var cardSelect = document.querySelector("card-title"+i)
-                    cardSelect.textContent = horrorTitleArray[randomIndex]
+            else if (selectText === "Horror") {
+                
+                for (var i = 1; i < 6; i++) {
+                    var randomIndex = Math.floor(Math.random() * 50)
+                    var cardSelect = document.getElementById("card-title" + i)
+                    cardSelect.innerHTML = horrorTitleArray[randomIndex]
                 }
-                
+
             }
-           else if(selectText === "Comedy"){
-            var randomIndex = Math.floor(math.random() * comedyTitleArray.length )
-            for(var i=1;i<6;i++){
-                var cardSelect = document.querySelector("card-title"+i)
-                cardSelect.textContent = comedyTitleArray[randomIndex]
-            }
+            else if (selectText === "Comedy") {
                 
+                for (var i = 1; i < 6; i++) {
+                    var randomIndex = Math.floor(Math.random() * 50)
+                    var cardSelect = document.getElementById("card-title" + i)
+                    cardSelect.innerHTML = comedyTitleArray[randomIndex]
+                }
+
             }
 
         })
-    putDropDownValueIntoLocalStorage();
-}
 
+        putDropDownValueIntoLocalStorage()
+}
 
 
 
