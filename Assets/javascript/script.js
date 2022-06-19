@@ -93,7 +93,7 @@ function displayMovie(){
             if(selectText === "Action/Adventure"){
                 var randomIndex = Math.floor(math.random() * actionTitleArray.length )
                 for(var i=1;i<6;i++){
-                    var cardSelect = document.getElementById("card-"+i)
+                    var cardSelect = document.querySelector("card-title"+i)
                     cardSelect.textContent = actionTitleArray[randomIndex]
                 }
                 
@@ -101,7 +101,7 @@ function displayMovie(){
             else if(selectText === "Romance"){
                 var randomIndex = Math.floor(math.random() * romanceTitleArray.length )
                 for(var i=1;i<6;i++){
-                    var cardSelect = document.getElementById("card-"+i)
+                    var cardSelect = document.querySelector("card-title"+i)
                     cardSelect.textContent = romanceTitleArray[randomIndex]
                 }
                 
@@ -109,7 +109,7 @@ function displayMovie(){
             else if(selectText === "Sci-Fi"){
                 var randomIndex = Math.floor(math.random() * scifiTitleArray.length )
                 for(var i=1;i<6;i++){
-                    var cardSelect = document.getElementById("card-"+i)
+                    var cardSelect = document.querySelector("card-title"+i)
                     cardSelect.textContent = scifiTitleArray[randomIndex]
                 }
                 
@@ -117,7 +117,7 @@ function displayMovie(){
             else if(selectText === "Horror"){
                 var randomIndex = Math.floor(math.random() * horrorTitleArray.length )
                 for(var i=1;i<6;i++){
-                    var cardSelect = document.getElementById("card-"+i)
+                    var cardSelect = document.querySelector("card-title"+i)
                     cardSelect.textContent = horrorTitleArray[randomIndex]
                 }
                 
@@ -125,7 +125,7 @@ function displayMovie(){
            else if(selectText === "Comedy"){
             var randomIndex = Math.floor(math.random() * comedyTitleArray.length )
             for(var i=1;i<6;i++){
-                var cardSelect = document.getElementById("card-"+i)
+                var cardSelect = document.getElementById("card-title"+i)
                 cardSelect.textContent = comedyTitleArray[randomIndex]
             }
                 
