@@ -8,11 +8,7 @@ var card2El = document.querySelector(".card-2")
 var card3El = document.querySelector(".card-3")
 var card4El = document.querySelector(".card-4")
 var card5El = document.querySelector(".card-5")
-var description1El = document.querySelector("#description-1")
-var description2El = document.querySelector("#description-2")
-var description3El = document.querySelector("#description-3")
-var description4El = document.querySelector("#description-4")
-var description5El = document.querySelector("#description-5")
+
 var comedyTitleArray = []
 var horrorTitleArray = []
 var scifiTitleArray = []
