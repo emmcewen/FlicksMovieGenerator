@@ -8,30 +8,3 @@ h1 {
     border: 2px solid black;
 }
 
-.button-container {
-    display:flex;
-}
-
-#buttons {
-    justify-content: center;
-    border: 2px solid black;
-  }
-
-#buttons {
-    background-color: rgb(8, 96, 144);
-    width: 200px;
-    border: solid 3px rgb(0,0,0);
-    border-radius: 20px;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.1s;;
-    justify-content: center;
-}
-
-#buttons:hover {
-    background-color:rgb(14, 26, 161);
-    color: rgb(250, 242, 242, 0.916);
-    border: solid 5px rgb(242,242,242);
-    letter-spacing: -0.05em;
-}
