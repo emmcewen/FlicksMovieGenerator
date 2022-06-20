@@ -19,6 +19,12 @@ var scifiTitleArray = []
 var romanceTitleArray = []
 var actionTitleArray = []
 
+var comedyDescrArray = []
+var horrorDescrArray = []
+var scifiDescrArray = []
+var romanceDescrArray = []
+var actionDescrArray = []
+
 var promiseArray = []
 
 for (i = 1; i < 100; i++) {
@@ -28,12 +34,16 @@ for (i = 1; i < 100; i++) {
         .then(function (data) {
 
             for (var i = 0; i < data.results.length; i++) {
+                //genre ids
                 if (data.results[i].genre_ids) {
 
                     //search for comedy
                     if (data.results[i].genre_ids[0] === 35) {
+                        var descriptionData = data.results[i].overview
                         var title = data.results[i].original_title
                         comedyTitleArray.push(title)
+                        comedyDescrArray.push(descriptionData)
+
 
 
 
@@ -41,29 +51,37 @@ for (i = 1; i < 100; i++) {
                     }
                     //search for action adventure
                     else if (data.results[i].genre_ids[0] === 12 || data.results[i].genre_ids[0] === 28) {
+                        var descriptionData = data.results[i].overview
                         var title = data.results[i].original_title
                         actionTitleArray.push(title)
+                        actionDescrArray.push(descriptionData)
 
 
                     }
                     //search for horror
                     else if (data.results[i].genre_ids[0] === 27) {
+                        var descriptionData = data.results[i].overview
                         var title = data.results[i].original_title
                         horrorTitleArray.push(title)
+                        horrorDescrArray.push(descriptionData)
 
 
                     }
                     //search for romance
                     else if (data.results[i].genre_ids[0] === 10749) {
+                        var descriptionData = data.results[i].overview
                         var title = data.results[i].original_title
                         romanceTitleArray.push(title)
+                        romanceDescrArray.push(descriptionData)
 
 
                     }
                     //search for scifi
                     else if (data.results[i].genre_ids[0] === 878) {
+                        var descriptionData = data.results[i].overview
                         var title = data.results[i].original_title
                         scifiTitleArray.push(title)
+                        scifiDescrArray.push(descriptionData)
 
 
 
@@ -75,6 +93,7 @@ for (i = 1; i < 100; i++) {
 
 
                 }
+               
 
 
             }
@@ -96,48 +115,59 @@ function displayMovie() {
             if (selectText === "Action/Adventure") {
                 
                 for (var i = 1; i < 6; i++) {
-                    var randomIndex = Math.floor(Math.random() * 50)
+                    var randomIndex = Math.floor(Math.random() *actionTitleArray.length)
                     console.log(randomIndex)
                     console.log(actionTitleArray[randomIndex])
                     var cardSelect = document.getElementById("card-title" + i)
+                    var cardSelectDescr = document.getElementById("description-"+i)
                     console.log(cardSelect)
                     cardSelect.innerHTML = actionTitleArray[randomIndex]
+                    cardSelectDescr.innerHTML=actionDescrArray[randomIndex]
+                    
                 }
 
             }
             else if (selectText === "Romance") {
                
                 for (var i = 1; i < 6; i++) {
-                    var randomIndex = Math.floor(Math.random() * 50)
+                    var randomIndex = Math.floor(Math.random() * romanceTitleArray.length)
                     var cardSelect = document.getElementById("card-title" + i)
+                    var cardSelectDescr = document.getElementById("description-"+i)
                     cardSelect.innerHTML = romanceTitleArray[randomIndex]
+                    cardSelectDescr.innerHTML=romanceDescrArray[randomIndex]
                 }
 
             }
             else if (selectText === "Sci-Fi") {
                 
                 for (var i = 1; i < 6; i++) {
-                    var randomIndex = Math.floor(Math.random() * 50)
+                    var randomIndex = Math.floor(Math.random() *scifiTitleArray.length )
                     var cardSelect = document.getElementById("card-title" + i)
+                    var cardSelectDescr = document.getElementById("description-"+i)
                     cardSelect.innerHTML = scifiTitleArray[randomIndex]
+                    cardSelectDescr.innerHTML=scifiDescrArray[randomIndex]
                 }
 
             }
             else if (selectText === "Horror") {
                 
                 for (var i = 1; i < 6; i++) {
-                    var randomIndex = Math.floor(Math.random() * 50)
+                    var randomIndex = Math.floor(Math.random() * horrorTitleArray.length)
                     var cardSelect = document.getElementById("card-title" + i)
+                    var cardSelectDescr = document.getElementById("description-"+i)
                     cardSelect.innerHTML = horrorTitleArray[randomIndex]
+                    cardSelectDescr.innerHTML=horrorDescrArray[randomIndex]
                 }
 
             }
             else if (selectText === "Comedy") {
                 
                 for (var i = 1; i < 6; i++) {
-                    var randomIndex = Math.floor(Math.random() * 50)
+                    var randomIndex = Math.floor(Math.random() * comedyTitleArray.length)
                     var cardSelect = document.getElementById("card-title" + i)
+                    var cardSelectDescr = document.getElementById("description-"+i)
                     cardSelect.innerHTML = comedyTitleArray[randomIndex]
+                    cardSelectDescr.innerHTML =comedyDescrArray[randomIndex]
                 }
 
             }
