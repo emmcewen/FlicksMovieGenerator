@@ -4,9 +4,11 @@ h1 {
     margin-top: 0px;
 }
 
-#container {
-    border: 2px solid black;
-}
+/*.container {
+    display:flex;
+    display: grid;
+    position: relative; 
+}*/
 
 .button-container {
     display:flex;
