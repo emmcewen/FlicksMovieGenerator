@@ -4,11 +4,11 @@ h1 {
     margin-top: 0px;
 }
 
-.container {
+/*.container {
     display:flex;
     display: grid;
     position: relative; 
-}
+}*/
 
 .button-container {
     display:flex;
