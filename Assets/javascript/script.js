@@ -8,42 +8,32 @@ var card2El = document.querySelector(".card-2")
 var card3El = document.querySelector(".card-3")
 var card4El = document.querySelector(".card-4")
 var card5El = document.querySelector(".card-5")
-
+var description1El = document.querySelector("#description-1")
+var description2El = document.querySelector("#description-2")
+var description3El = document.querySelector("#description-3")
+var description4El = document.querySelector("#description-4")
+var description5El = document.querySelector("#description-5")
 var comedyTitleArray = []
 var horrorTitleArray = []
 var scifiTitleArray = []
 var romanceTitleArray = []
 var actionTitleArray = []
 
-var comedyDescrArray = []
-var horrorDescrArray = []
-var scifiDescrArray = []
-var romanceDescrArray = []
-var actionDescrArray = []
-
 var promiseArray = []
 
 for (i = 1; i < 100; i++) {
-
     var prom = fetch("https://api.themoviedb.org/3/movie/popular?api_key=74202059f4cf77ba57c6c082dbb67f3d&language=en-US&page=" + i)
         .then(response => response.json())
         .then(function (data) {
-
             for (var i = 0; i < data.results.length; i++) {
                 //genre ids
                 if (data.results[i].genre_ids) {
-
                     //search for comedy
                     if (data.results[i].genre_ids[0] === 35) {
                         var descriptionData = data.results[i].overview
                         var title = data.results[i].original_title
                         comedyTitleArray.push(title)
                         comedyDescrArray.push(descriptionData)
-
-
-
-
-
                     }
                     //search for action adventure
                     else if (data.results[i].genre_ids[0] === 12 || data.results[i].genre_ids[0] === 28) {
@@ -51,8 +41,6 @@ for (i = 1; i < 100; i++) {
                         var title = data.results[i].original_title
                         actionTitleArray.push(title)
                         actionDescrArray.push(descriptionData)
-
-
                     }
                     //search for horror
                     else if (data.results[i].genre_ids[0] === 27) {
@@ -60,8 +48,6 @@ for (i = 1; i < 100; i++) {
                         var title = data.results[i].original_title
                         horrorTitleArray.push(title)
                         horrorDescrArray.push(descriptionData)
-
-
                     }
                     //search for romance
                     else if (data.results[i].genre_ids[0] === 10749) {
@@ -69,8 +55,6 @@ for (i = 1; i < 100; i++) {
                         var title = data.results[i].original_title
                         romanceTitleArray.push(title)
                         romanceDescrArray.push(descriptionData)
-
-
                     }
                     //search for scifi
                     else if (data.results[i].genre_ids[0] === 878) {
@@ -78,38 +62,27 @@ for (i = 1; i < 100; i++) {
                         var title = data.results[i].original_title
                         scifiTitleArray.push(title)
                         scifiDescrArray.push(descriptionData)
-
-
-
                     }
-
-
-
-
-
-
                 }
-               
-
-
             }
         })
         .catch(err => console.error(err))
+    }
     promiseArray.push(prom)
 
-}
-console.log(promiseArray)
 
+console.log(promiseArray)
 function displayMovie() {
     Promise.all(promiseArray)
-
         .then(function () {
+        
 
 
+            var selectText = document.getElementById("my-text").value;
             var selectText = document.getElementById("list").value;
-            
+
             if (selectText === "Action/Adventure") {
-                
+
                 for (var i = 1; i < 6; i++) {
                     var randomIndex = Math.floor(Math.random() *actionTitleArray.length)
                     console.log(randomIndex)
@@ -121,8 +94,8 @@ function displayMovie() {
                     cardSelectDescr.innerHTML=actionDescrArray[randomIndex]
                     
                 }
-
             }
+
             else if (selectText === "Romance") {
                
                 for (var i = 1; i < 6; i++) {
@@ -132,7 +105,6 @@ function displayMovie() {
                     cardSelect.innerHTML = romanceTitleArray[randomIndex]
                     cardSelectDescr.innerHTML=romanceDescrArray[randomIndex]
                 }
-
             }
             else if (selectText === "Sci-Fi") {
                 
@@ -143,7 +115,6 @@ function displayMovie() {
                     cardSelect.innerHTML = scifiTitleArray[randomIndex]
                     cardSelectDescr.innerHTML=scifiDescrArray[randomIndex]
                 }
-
             }
             else if (selectText === "Horror") {
                 
@@ -154,7 +125,6 @@ function displayMovie() {
                     cardSelect.innerHTML = horrorTitleArray[randomIndex]
                     cardSelectDescr.innerHTML=horrorDescrArray[randomIndex]
                 }
-
             }
             else if (selectText === "Comedy") {
                 
@@ -165,22 +135,9 @@ function displayMovie() {
                     cardSelect.innerHTML = comedyTitleArray[randomIndex]
                     cardSelectDescr.innerHTML =comedyDescrArray[randomIndex]
                 }
-
             }
 
         })
 
-    
+        putDropDownValueIntoLocalStorage()
 }
-
-
-
-
-
-
-
-
-
-
-
-

@@ -9,7 +9,6 @@ Loop through the array and check for streaming information (per documentation)*/
 
 //javascript fetch//
 
-
 var actionBtn = document.querySelector("#action")
 var romanceBtn = document.querySelector("#romance")
 var scifiBtn = document.querySelector("#scifi")
@@ -32,7 +31,7 @@ var romanceTitleArray = []
 var actionTitleArray = []
 
 var promiseArray = []
-
+var imdbID= response.results[0].imdbid
 
 for (var i = 1; i < 6; i++) {
 	var cardSelect = document.getElementById("card-" + i).value
@@ -50,8 +49,8 @@ for (var i = 1; i < 6; i++) {
 		.then(function (data) {
 			data.results[0].imdbid=id;
 
-		}
 
-		.catch(err => console.error(err))
-		
-	}
+
+	})
+	.catch(err => console.error(err))
+}
