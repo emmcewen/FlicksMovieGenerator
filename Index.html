@@ -19,22 +19,9 @@
   <div class="row">
     <div class="grid col s12"><span class="flow-text">
 
-        <!-- <div class="input-field col s12 m6">
-          <section id="button-container">
-            <select class="icons">
-              <option value="" disabled selected>Select Genre</option>
-              <option value="Action/Adventure" data-icon="images/sample-1.jpg" class="left">Action/Adventure</option>
-              <option value="Romance" data-icon="images/thenotebook.jpg" class="left">Romance</option>
-              <option value="Sci-Fi" data-icon="images/yuna.jpg" class="left">Sci-Fi</option>
-              <option value="Comedy" data-icon="images/sample-1.jpg" class="left">Comedy</option>
-              <option value="Horror" data-icon="images/it.jpg" class="left">Horror</option>
-            </select>
-        </div>
-        </section> -->
-
-        <div id="buttons" class="col s12 m6 l3">
-          <section id="button-container">
-            <select class="browser-default" id="my-text">
+        <div id="select" class="col s12 m6 l3">
+          <section id="select-container">
+            <select class="browser-default" id="list" onchange="putDropDownValueIntoLocalStorage()">
               <option value="" disabled selected>Select Genre</option>
               <option value="Action/Adventure">Action/Adventure</option>
               <option value="Romance">Romance</option>
@@ -45,7 +32,7 @@
             </select>
           </section>
         </div>
-
+             
         <!-- </div> -->
         <div id="container" class="results col s12 m4 l9">
           <div class="row">

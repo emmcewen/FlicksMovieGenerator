@@ -106,7 +106,7 @@ function displayMovie() {
         .then(function () {
 
 
-            var selectText = document.getElementById("my-text").value;
+            var selectText = document.getElementById("list").value;
             
             if (selectText === "Action/Adventure") {
                 
@@ -170,7 +170,7 @@ function displayMovie() {
 
         })
 
-        putDropDownValueIntoLocalStorage()
+    
 }
 
 
