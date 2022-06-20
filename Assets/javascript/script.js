@@ -170,7 +170,7 @@ function displayMovie() {
 
         })
 
-    
+        putDropDownValueIntoLocalStorage();
 }
 
 
