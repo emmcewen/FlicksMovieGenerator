@@ -31,7 +31,7 @@ var romanceTitleArray = []
 var actionTitleArray = []
 
 var promiseArray = []
-var imdbID= response.results[0].imdbid
+var imdbID = response.results[0].imdbid
 
 for (var i = 1; i < 6; i++) {
 	var cardSelect = document.getElementById("card-" + i).value
@@ -47,10 +47,14 @@ for (var i = 1; i < 6; i++) {
 	fetch('https://ott-details.p.rapidapi.com/search?title=' + cardSelect + '&page=1', options)
 		.then(response => response.json())
 		.then(function (data) {
-			data.results[0].imdbid=id;
+			data.results[0].imdbid = id;
 
 
 
-	})
-	.catch(err => console.error(err))
+		})
+
+	fetch("https://api.themoviedb.org/3/movie/popular?api_key=74202059f4cf77ba57c6c082dbb67f3d&language=en-US&page=1")
+		.then(response => response.json())
+		.then(response => console.log(response))
+		.catch(err => console.error(err))
 }
