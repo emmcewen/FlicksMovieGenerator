@@ -8,6 +8,8 @@ h1 {
     border: 2px solid black;
     margin-top: 0px;
     color: #950101;
+    text-shadow: 5px 5px 3px black;
+    font-family: 'Fascinate Inline', cursive;
 }
 
 /*instructions paragraph*/
@@ -25,8 +27,17 @@ p {
 
 /*cards*/
 .card-content {
-    background-color: lightgray;
+    background-color: gray;
     color: black;
+}
+
+.card-title {
+    color: #950101;
+    text-shadow: 2px 2px 5px rgb(37, 37, 37);
+}
+
+#card-1, #card-2, #card-3, #card-4, #card-5 {
+    font-weight: 400;
 }
 
 
