@@ -2,23 +2,27 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+Are you tired of spending so much time having to flip through all of your different streaming services to try to find a good movie to watch? With this website, all you have to do is select the drop down arrow and pick one of the genres listed and it will populate 5 random movies for you. Each includes a brief description of the movie as well as the IMDB rating. If you decide you want to watch a different genre instead, all you have to do is select a new genre from the drop down and it will populate another 5 movies for you. The next time you visit the website, it will remind you which movie genre you last searched.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+Our motivation behind this website was to give people an easier way to search for a movie to watch. It helps save time scrolling through hundreds of movies between all the different streaming services. We used 3 API's to pull all the data we needed to acheive this. 
 
 ## Usage
 
 *screen shot and live link go here
 
 ## Credits
+All of us contributed to creating the HTML.
 
-Emily McEwen: https://github.com/emmcewen
-Iman Pace: https://github.com/y2kRULEZ
-Mariah Johnston: https://github.com/Mariah217
-Muse Jama: https://github.com/Mjama123
+Emily McEwen: https://github.com/emmcewen <br>
+    Emily worked on the website mock up/wireframing, materialize and the second API.<br>
+    <br>
+Iman Pace: https://github.com/y2kRULEZ<br>
+    Iman worked on the first API and helped with the second and third.<br>
+    <br>
+Mariah Johnston: https://github.com/Mariah217<br>
+    Mariah worked on local storage, css and the readme.<br>
+    <br>
+Muse Jama: https://github.com/Mjama123<br>
 
 
 ## License
@@ -44,5 +48,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
