@@ -1,43 +1,39 @@
- /*background color*/
- html {
-    background-image: linear-gradient(to bottom left, black, rgb(60, 60, 60));
-}
 
-/*webpage title*/
 h1 {
     border: 2px solid black;
     margin-top: 0px;
-    color: #950101;
-    text-shadow: 5px 5px 3px black;
-    font-family: 'Fascinate Inline', cursive;
 }
 
-/*instructions paragraph*/
-h6 {
-    color: lightgray;
+/*.container {
+    display:flex;
+    display: grid;
+    position: relative; 
+}*/
+
+.button-container {
+    display:flex;
+}
+
+#buttons {
+    justify-content: center;
+    border: 2px solid black;
+  }
+
+#buttons {
+    background-color: rgb(8, 96, 144);
+    width: 200px;
+    border: solid 3px rgb(0,0,0);
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
     text-align: center;
+    text-decoration: none;
+    transition: all 0.1s;;
+    justify-content: center;
 }
 
-/*you last searched*/
-p {
-    color: lightgray;
-    text-align: center;
-    margin-top: 50px;
+#buttons:hover {
+    background-color:rgb(14, 26, 161);
+    color: rgb(250, 242, 242, 0.916);
+    border: solid 5px rgb(242,242,242);
+    letter-spacing: -0.05em;
 }
-
-/*cards*/
-.card-content {
-    background-color: gray;
-    color: black;
-}
-
-.card-title {
-    color: #950101;
-    text-shadow: 2px 2px 5px rgb(37, 37, 37);
-}
-
-#card-1, #card-2, #card-3, #card-4, #card-5 {
-    font-weight: 400;
-}
-
-
