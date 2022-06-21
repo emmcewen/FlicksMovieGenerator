@@ -1,10 +1,32 @@
+ /*background color*/
+ html {
+    background-image: linear-gradient(to bottom left, black, rgb(60, 60, 60));
+}
 
+/*webpage title*/
 h1 {
     border: 2px solid black;
     margin-top: 0px;
+    color: #950101;
 }
 
-#container {
-    border: 2px solid black;
+/*instructions paragraph*/
+h6 {
+    color: lightgray;
+    text-align: center;
 }
+
+/*you last searched*/
+p {
+    color: lightgray;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/*cards*/
+.card-content {
+    background-color: lightgray;
+    color: black;
+}
+
 
