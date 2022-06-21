@@ -1,13 +1,3 @@
-//Psuedo Code for OTT details API Documentationrapid API//
-
-/*GET data from OTT
-
-Json the data and store the objects in an array of scores
-
-Loop through the array and check for streaming information (per documentation)*/
-
-
-//javascript fetch//
 
 var actionBtn = document.querySelector("#action")
 var romanceBtn = document.querySelector("#romance")
@@ -31,7 +21,6 @@ var romanceTitleArray = []
 var actionTitleArray = []
 
 var promiseArray = []
-var imdbID = response.results[0].imdbid
 
 for (var i = 1; i < 6; i++) {
 	var cardSelect = document.getElementById("card-" + i).value
@@ -47,7 +36,10 @@ for (var i = 1; i < 6; i++) {
 	fetch('https://ott-details.p.rapidapi.com/search?title=' + cardSelect + '&page=1', options)
 		.then(response => response.json())
 		.then(function (data) {
+			var imdbID = response.results[0].imdbid
 			data.results[0].imdbid = id;
+			
+			
 
 
 
