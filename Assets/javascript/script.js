@@ -118,7 +118,11 @@ function displayMovie() {
                     var cardSelectDescr = document.getElementById("description-"+i)
                     console.log(cardSelect)
                     cardSelect.innerHTML = actionTitleArray[randomIndex]
-                    cardSelectDescr.innerHTML=actionDescrArray[randomIndex]
+                    if(actionDescrArray[randomIndex]===""){
+                        var noDescr =  "No description available"
+                        cardSelectDescr.innerHTML = noDescr
+                    }else{cardSelectDescr.innerHTML=actionDescrArray[randomIndex]}
+                    
                     
                 }
 
@@ -130,7 +134,10 @@ function displayMovie() {
                     var cardSelect = document.getElementById("card-title" + i)
                     var cardSelectDescr = document.getElementById("description-"+i)
                     cardSelect.innerHTML = romanceTitleArray[randomIndex]
-                    cardSelectDescr.innerHTML=romanceDescrArray[randomIndex]
+                    if(romanceDescrArray[randomIndex]===""){
+                        var noDescr =  "No description available"
+                        cardSelectDescr.innerHTML = noDescr
+                    }else{cardSelectDescr.innerHTML=romanceDescrArray[randomIndex]}
                 }
 
             }
@@ -141,7 +148,10 @@ function displayMovie() {
                     var cardSelect = document.getElementById("card-title" + i)
                     var cardSelectDescr = document.getElementById("description-"+i)
                     cardSelect.innerHTML = scifiTitleArray[randomIndex]
-                    cardSelectDescr.innerHTML=scifiDescrArray[randomIndex]
+                    if(scifiDescrArray[randomIndex]===""){
+                        var noDescr =  "No description available"
+                        cardSelectDescr.innerHTML = noDescr
+                    }else{cardSelectDescr.innerHTML=scifiDescrArray[randomIndex]}
                 }
 
             }
@@ -152,7 +162,10 @@ function displayMovie() {
                     var cardSelect = document.getElementById("card-title" + i)
                     var cardSelectDescr = document.getElementById("description-"+i)
                     cardSelect.innerHTML = horrorTitleArray[randomIndex]
-                    cardSelectDescr.innerHTML=horrorDescrArray[randomIndex]
+                    if(horrorDescrArray[randomIndex]===""){
+                        var noDescr =  "No description available"
+                        cardSelectDescr.innerHTML = noDescr
+                    }else{cardSelectDescr.innerHTML=horrorDescrArray[randomIndex]}
                 }
 
             }
@@ -163,7 +176,10 @@ function displayMovie() {
                     var cardSelect = document.getElementById("card-title" + i)
                     var cardSelectDescr = document.getElementById("description-"+i)
                     cardSelect.innerHTML = comedyTitleArray[randomIndex]
-                    cardSelectDescr.innerHTML =comedyDescrArray[randomIndex]
+                    if(comedyDescrArray[randomIndex]===""){
+                        var noDescr =  "No description available"
+                        cardSelectDescr.innerHTML = noDescr
+                    }else{cardSelectDescr.innerHTML=comedyDescrArray[randomIndex]}
                 }
 
             }

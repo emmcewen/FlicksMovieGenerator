@@ -21,32 +21,74 @@ var romanceTitleArray = []
 var actionTitleArray = []
 
 var promiseArray = []
+imdbIDArray = []
 
-for (var i = 1; i < 6; i++) {
-	var cardSelect = document.getElementById("card-" + i).value
-	const options = {
-		method: 'GET',
-		headers: {
-			'X-RapidAPI-Key': '5163f66adamsh9a5b7af41166208p183e37jsna4acff3a3926',
-			'X-RapidAPI-Host': 'ott-details.p.rapidapi.com'
+function getimdbID() {
+	for (var i = 1; i < 6; i++) {
+		var cardSelect = document.getElementById("card-" + i).value
+		const options = {
+			method: 'GET',
+			headers: {
+				'X-RapidAPI-Key': '5163f66adamsh9a5b7af41166208p183e37jsna4acff3a3926',
+				'X-RapidAPI-Host': 'ott-details.p.rapidapi.com'
 
+			}
 		}
+
+		var prom = fetch('https://ott-details.p.rapidapi.com/search?title=' + cardSelect + '&page=1', options)
+			.then(response => response.json())
+			.then(function (data) {
+				if (response.results[0].imdbid) {
+					var cardSelect = document.getElementById("ratings" + i)
+					var imdbID = response.results[0].imdbid
+					data.results[0].imdbid = imdbIDArray.push(imdbID);
+				} else {
+					cardSelect.innerHTML = "N/A"
+				}
+
+
+
+
+
+			})
+			.catch(err => console.error(err))
+		promiseArray.push(prom)
+
+
 	}
-
-	fetch('https://ott-details.p.rapidapi.com/search?title=' + cardSelect + '&page=1', options)
-		.then(response => response.json())
-		.then(function (data) {
-			var imdbID = response.results[0].imdbid
-			data.results[0].imdbid = id;
-			
-			
-
-
-
-		})
-
-	fetch("https://api.themoviedb.org/3/movie/popular?api_key=74202059f4cf77ba57c6c082dbb67f3d&language=en-US&page=1")
-		.then(response => response.json())
-		.then(response => console.log(response))
-		.catch(err => console.error(err))
 }
+
+function getimdbRating() {
+	Promise.all(promiseArray)
+		.then(function () {
+			for (i = 1; i < 6; i++) {
+				const options = {
+					method: 'GET',
+					headers: {
+						'X-RapidAPI-Key': '5163f66adamsh9a5b7af41166208p183e37jsna4acff3a3926',
+						'X-RapidAPI-Host': 'ott-details.p.rapidapi.com'
+
+					}
+				}
+				fetch('https://ott-details.p.rapidapi.com/gettitleDetails?imdbid=' + imdbIDArray[i - 1], options)
+					.then(response => response.json)
+					.then(function (data) {
+						if (data.imdbrating) {
+
+							var imdbRating = data.imdbrating
+							var cardSelect = document.getElementById("ratings" + i)
+							cardSelect.innerHTML = imdbRating
+						} else {
+							cardSelect.innerHTML = "N/A"
+						}
+
+					})
+			}
+		})
+}
+
+
+
+
+
+
