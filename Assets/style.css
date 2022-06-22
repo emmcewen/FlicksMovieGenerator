@@ -6,11 +6,18 @@
  /*webpage title*/
  h1 {
      margin-top: 20px;
+     margin-left: 10px;
      font-size: 80px;
      color: #950101;
      text-shadow: 5px 5px 3px black;
      font-family: 'Fascinate Inline', cursive;
  }
+
+ h4 {
+    color: white;
+    margin-left: 10px;
+ }
+
 
  /*instructions paragraph*/
  h6 {
