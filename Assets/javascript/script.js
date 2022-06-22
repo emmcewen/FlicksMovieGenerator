@@ -188,15 +188,3 @@ function displayMovie() {
 
         putDropDownValueIntoLocalStorage();
 }
-
-
-
-
-
-
-
-
-
-
-
-

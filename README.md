@@ -14,16 +14,14 @@ Our motivation behind this website was to give people an easier way to search fo
 All of us contributed to creating the HTML.
 
 Emily McEwen: https://github.com/emmcewen <br>
-    Emily worked on the website mock up/wireframing, materialize and the second API.<br>
+    Emily worked on the website mock up/wireframing, materialize, powerpoint, and header image.<br>
     <br>
 Iman Pace: https://github.com/y2kRULEZ<br>
-    Iman worked on the first API and helped with the second and third.<br>
+    Iman worked on both API's, and came up with website idea.<br>
     <br>
 Mariah Johnston: https://github.com/Mariah217<br>
     Mariah worked on local storage, css and the readme.<br>
     <br>
-Muse Jama: https://github.com/Mjama123<br>
-
 
 ## License
 
