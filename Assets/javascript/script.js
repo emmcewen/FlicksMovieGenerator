@@ -172,15 +172,3 @@ function displayMovie() {
 
     
 }
-
-
-
-
-
-
-
-
-
-
-
-

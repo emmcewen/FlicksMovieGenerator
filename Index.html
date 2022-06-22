@@ -6,21 +6,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./Assets/style.css">
+
   <title>Flicks</title>
+
 </head>
 <header>
-  <h1 id="title">Flicks</h1>
+  <img src="./Assets/images/Movie-Clapper_header.jpg">
 </header>
 <main>
-  <p class="instructions">Click buttons to generate top 5 movies for selected genre. Keep clicking to generate random
-    results.</p>
-  <p id="last-searched-genre">You last searched <span id="genre"></span></p>
+
+  <h1 id="title">Flicks <i class="fa-solid fa-ticket fa-2xs"></i> </h1>
+  <h6 class="instructions">Click the drop down to select the genre you want <br> to watch and it will generate 5 movies
+    at random.</h6>
+  <p id="last-searched-genre">You last searched: <span id="genre"></span></p>
+
   <div class="row">
-    <!--<div class="grid col s12"><span class="flow-text">-->
+    <!-- <div class="grid col s12"><span class="flow-text"> -->
     <div id="select" class="col s12 m6 l3"></div>
     <section id="select-container">
-      <select class="browser-default" id="list" onchange="displayMovie()">
+      <select class="browser-default col s4 offset-s1" id="list" onchange="displayMovie()">
         <option value="" disabled selected>Select Genre</option>
         <option value="Action/Adventure">Action/Adventure</option>
         <option value="Romance">Romance</option>
@@ -30,14 +42,16 @@
       </select>
     </section>
   </div>
+
   <!--Card-1-->
   <div class="container">
     <div class="col s6">
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <span class="card-title" id="card-1">Card Title</span>
-            <p id="description-1">I am a very simple card. I am good at containing small bits of information.
+            <span class="card-title" id="card-title1">Card Title</span>
+            <p class="z-depth-5" id="description-1">I am a very simple card. I am good at containing small bits of
+              information.
               I am convenient because I require little markup to use effectively.</p>
           </div>
         </div>
@@ -48,8 +62,9 @@
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <span class="card-title" id="card-2">Card Title</span>
-            <p id="description-2">I am a very simple card. I am good at containing small bits of information.
+            <span class="card-title" id="card-title2">Card Title</span>
+            <p class="z-depth-5" id="description-2">I am a very simple card. I am good at containing small bits of
+              information.
               I am convenient because I require little markup to use effectively.</p>
           </div>
         </div>
@@ -62,8 +77,9 @@
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <span class="card-title" id="card-3">Card Title</span>
-            <p id="description-3">I am a very simple card. I am good at containing small bits of information.
+            <span class="card-title3" id="card-title3">Card Title</span>
+            <p class="z-depth-5" id="description-3">I am a very simple card. I am good at containing small bits of
+              information.
               I am convenient because I require little markup to use effectively.</p>
           </div>
         </div>
@@ -74,8 +90,9 @@
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <span class="card-title" id="card-4">Card Title</span>
-            <p id="description-4">I am a very simple card. I am good at containing small bits of information.
+            <span class="card-title4" id="card-title4">Card Title</span>
+            <p class="z-depth-5" id="description-4">I am a very simple card. I am good at containing small bits of
+              information.
               I am convenient because I require little markup to use effectively.</p>
           </div>
         </div>
@@ -86,8 +103,9 @@
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <span class="card-title" id="card-5">Card Title</span>
-            <p id="description-5">I am a very simple card. I am good at containing small bits of information.
+            <span class="card-title5" id="card-title5">Card Title</span>
+            <p class="z-depth-5" id="description-5">I am a very simple card. I am good at containing small bits of
+              information.
               I am convenient because I require little markup to use effectively.</p>
           </div>
         </div>
@@ -98,6 +116,7 @@
 
 <body>
   <script src="./Assets/javascript/script.js"></script>
+  <!--<script src="./Assets/javascript/API_2.js"></script>-->
   <script src="./Assets/javascript/localstorage.js"></script>
 </body>
 
