@@ -1,23 +1,3 @@
-var actionBtn=document.querySelector("#action")
-var romanceBtn=document.querySelector("#romance")
-var scifiBtn=document.querySelector("#scifi")
-var comedyBtn=document.querySelector("#comedy")
-var horrorBtn=document.querySelector("#horror")
-var card1El=document.querySelector(".card-1")
-var card2El=document.querySelector(".card-2")
-var card3El=document.querySelector(".card-3")
-var card4El=document.querySelector(".card-4")
-var card5El=document.querySelector(".card-5")
-var description1El=document.querySelector("#description-1")
-var description2El=document.querySelector("#description-2")
-var description3El=document.querySelector("#description-3")
-var description4El=document.querySelector("#description-4")
-var description5El=document.querySelector("#description-5")
-var cardTitle1El = document.querySelector("#card-title1")
-var cardTitle2El = document.querySelector("#card-title2")
-var cardTitle3El = document.querySelector("#card-title3")
-var cardTitle4El = document.querySelector("#card-title4")
-var cardTitle5El = document.querySelector("#card-title5")
 var actionBtn = document.querySelector("#action")
 var romanceBtn = document.querySelector("#romance")
 var scifiBtn = document.querySelector("#scifi")
@@ -35,10 +15,6 @@ var scifiTitleArray = []
 var romanceTitleArray = []
 var actionTitleArray = []
 
-for (i = 1; i < 100; i++) {
-    var prom = fetch("https://api.themoviedb.org/3/movie/popular?api_key=74202059f4cf77ba57c6c082dbb67f3d&language=en-US&page=" + i)
-        .then(response => response.json())
-        .then(function (data) {
 var comedyDescrArray = []
 var horrorDescrArray = []
 var scifiDescrArray = []
@@ -56,12 +32,17 @@ for (i = 1; i < 100; i++) {
             for (var i = 0; i < data.results.length; i++) {
                 //genre ids
                 if (data.results[i].genre_ids) {
+
                     //search for comedy
                     if (data.results[i].genre_ids[0] === 35) {
                         var descriptionData = data.results[i].overview
                         var title = data.results[i].original_title
                         comedyTitleArray.push(title)
                         comedyDescrArray.push(descriptionData)
+
+
+
+
 
                     }
                     //search for action adventure
@@ -97,11 +78,6 @@ for (i = 1; i < 100; i++) {
                         var title = data.results[i].original_title
                         scifiTitleArray.push(title)
                         scifiDescrArray.push(descriptionData)
-                    }
-                }
-            }
-        })
-        .catch(err => console.error(err))}
 
 
 
@@ -142,7 +118,11 @@ function displayMovie() {
                     var cardSelectDescr = document.getElementById("description-"+i)
                     console.log(cardSelect)
                     cardSelect.innerHTML = actionTitleArray[randomIndex]
-                    cardSelectDescr.innerHTML=actionDescrArray[randomIndex]
+                    if(actionDescrArray[randomIndex]===""){
+                        var noDescr =  "No description available"
+                        cardSelectDescr.innerHTML = noDescr
+                    }else{cardSelectDescr.innerHTML=actionDescrArray[randomIndex]}
+                    
                     
                 }
 
@@ -154,7 +134,10 @@ function displayMovie() {
                     var cardSelect = document.getElementById("card-title" + i)
                     var cardSelectDescr = document.getElementById("description-"+i)
                     cardSelect.innerHTML = romanceTitleArray[randomIndex]
-                    cardSelectDescr.innerHTML=romanceDescrArray[randomIndex]
+                    if(romanceDescrArray[randomIndex]===""){
+                        var noDescr =  "No description available"
+                        cardSelectDescr.innerHTML = noDescr
+                    }else{cardSelectDescr.innerHTML=romanceDescrArray[randomIndex]}
                 }
 
             }
@@ -165,7 +148,10 @@ function displayMovie() {
                     var cardSelect = document.getElementById("card-title" + i)
                     var cardSelectDescr = document.getElementById("description-"+i)
                     cardSelect.innerHTML = scifiTitleArray[randomIndex]
-                    cardSelectDescr.innerHTML=scifiDescrArray[randomIndex]
+                    if(scifiDescrArray[randomIndex]===""){
+                        var noDescr =  "No description available"
+                        cardSelectDescr.innerHTML = noDescr
+                    }else{cardSelectDescr.innerHTML=scifiDescrArray[randomIndex]}
                 }
 
             }
@@ -176,7 +162,10 @@ function displayMovie() {
                     var cardSelect = document.getElementById("card-title" + i)
                     var cardSelectDescr = document.getElementById("description-"+i)
                     cardSelect.innerHTML = horrorTitleArray[randomIndex]
-                    cardSelectDescr.innerHTML=horrorDescrArray[randomIndex]
+                    if(horrorDescrArray[randomIndex]===""){
+                        var noDescr =  "No description available"
+                        cardSelectDescr.innerHTML = noDescr
+                    }else{cardSelectDescr.innerHTML=horrorDescrArray[randomIndex]}
                 }
 
             }
@@ -187,15 +176,15 @@ function displayMovie() {
                     var cardSelect = document.getElementById("card-title" + i)
                     var cardSelectDescr = document.getElementById("description-"+i)
                     cardSelect.innerHTML = comedyTitleArray[randomIndex]
-                    cardSelectDescr.innerHTML =comedyDescrArray[randomIndex]
+                    if(comedyDescrArray[randomIndex]===""){
+                        var noDescr =  "No description available"
+                        cardSelectDescr.innerHTML = noDescr
+                    }else{cardSelectDescr.innerHTML=comedyDescrArray[randomIndex]}
                 }
 
             }
 
         })
-        putDropDownValueIntoLocalStorage()
-    
+
+        putDropDownValueIntoLocalStorage();
 }
-
-
-       
