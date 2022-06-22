@@ -5,8 +5,7 @@
 
 /*webpage title*/
 h1 {
-    border: 2px solid black;
-    margin-top: 0px;
+    margin-top: 40px;
     color: #950101;
     text-shadow: 5px 5px 3px black;
     font-family: 'Fascinate Inline', cursive;
@@ -23,6 +22,11 @@ p {
     color: lightgray;
     text-align: center;
     margin-top: 50px;
+}
+
+header {
+    height: auto;
+    display: flex;
 }
 
 /*cards*/
