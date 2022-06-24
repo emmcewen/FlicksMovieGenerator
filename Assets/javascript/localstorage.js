@@ -15,5 +15,4 @@ function getTextValueFromLocalStorageAndPutOntoPage(){
     document.getElementById("genre").textContent=localStorageSavedGenre;
 }
 
-//this is not currently working, I think this needs called in Iman's api so it will load when page loads
 getTextValueFromLocalStorageAndPutOntoPage(); //calling this function on page load causes text to stay on page after refresh
