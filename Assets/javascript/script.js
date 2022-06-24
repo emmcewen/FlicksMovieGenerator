@@ -1,13 +1,4 @@
-var actionBtn = document.querySelector("#action")
-var romanceBtn = document.querySelector("#romance")
-var scifiBtn = document.querySelector("#scifi")
-var comedyBtn = document.querySelector("#comedy")
-var horrorBtn = document.querySelector("#horror")
-var card1El = document.querySelector(".card-1")
-var card2El = document.querySelector(".card-2")
-var card3El = document.querySelector(".card-3")
-var card4El = document.querySelector(".card-4")
-var card5El = document.querySelector(".card-5")
+
 
 var comedyTitleArray = []
 var horrorTitleArray = []
@@ -22,7 +13,7 @@ var romanceDescrArray = []
 var actionDescrArray = []
 
 var promiseArray = []
-
+//for loop to grab multiple pages of movies
 for (i = 1; i < 100; i++) {
 
     var prom = fetch("https://api.themoviedb.org/3/movie/popular?api_key=74202059f4cf77ba57c6c082dbb67f3d&language=en-US&page=" + i)
@@ -40,10 +31,6 @@ for (i = 1; i < 100; i++) {
                         comedyTitleArray.push(title)
                         comedyDescrArray.push(descriptionData)
 
-
-
-
-
                     }
                     //search for action adventure
                     else if (data.results[i].genre_ids[0] === 12 || data.results[i].genre_ids[0] === 28) {
@@ -51,8 +38,6 @@ for (i = 1; i < 100; i++) {
                         var title = data.results[i].original_title
                         actionTitleArray.push(title)
                         actionDescrArray.push(descriptionData)
-
-
                     }
                     //search for horror
                     else if (data.results[i].genre_ids[0] === 27) {
@@ -60,8 +45,6 @@ for (i = 1; i < 100; i++) {
                         var title = data.results[i].original_title
                         horrorTitleArray.push(title)
                         horrorDescrArray.push(descriptionData)
-
-
                     }
                     //search for romance
                     else if (data.results[i].genre_ids[0] === 10749) {
@@ -69,8 +52,6 @@ for (i = 1; i < 100; i++) {
                         var title = data.results[i].original_title
                         romanceTitleArray.push(title)
                         romanceDescrArray.push(descriptionData)
-
-
                     }
                     //search for scifi
                     else if (data.results[i].genre_ids[0] === 878) {
@@ -79,19 +60,9 @@ for (i = 1; i < 100; i++) {
                         scifiTitleArray.push(title)
                         scifiDescrArray.push(descriptionData)
 
-
-
                     }
 
-
-
-
-
-
                 }
-               
-
-
             }
         })
         .catch(err => console.error(err))
@@ -101,95 +72,94 @@ for (i = 1; i < 100; i++) {
 console.log(promiseArray)
 
 function displayMovie() {
+    //settle promises
     Promise.all(promiseArray)
 
         .then(function () {
 
-
+            //get the value of the dropdown genre selected
             var selectText = document.getElementById("list").value;
-            
+
             if (selectText === "Action/Adventure") {
-                
+
+                //for each card
                 for (var i = 1; i < 6; i++) {
-                    var randomIndex = Math.floor(Math.random() *actionTitleArray.length)
-                    console.log(randomIndex)
-                    console.log(actionTitleArray[randomIndex])
+                    //random index number to access array
+                    var randomIndex = Math.floor(Math.random() * actionTitleArray.length)
                     var cardSelect = document.getElementById("card-title" + i)
-                    var cardSelectDescr = document.getElementById("description-"+i)
-                    console.log(cardSelect)
+                    var cardSelectDescr = document.getElementById("description-" + i)
                     cardSelect.innerHTML = actionTitleArray[randomIndex]
-                    if(actionDescrArray[randomIndex]===""){
-                        var noDescr =  "No description available"
+                    //deal with possible empty description
+                    if (actionDescrArray[randomIndex] === "") {
+                        var noDescr = "No description available"
                         cardSelectDescr.innerHTML = noDescr
-                    }else{cardSelectDescr.innerHTML=actionDescrArray[randomIndex]}
-                    
-                    
+                    } else { cardSelectDescr.innerHTML = actionDescrArray[randomIndex] }
+
+
                 }
 
             }
             else if (selectText === "Romance") {
-               
+
                 for (var i = 1; i < 6; i++) {
                     var randomIndex = Math.floor(Math.random() * romanceTitleArray.length)
                     var cardSelect = document.getElementById("card-title" + i)
-                    var cardSelectDescr = document.getElementById("description-"+i)
+                    var cardSelectDescr = document.getElementById("description-" + i)
                     cardSelect.innerHTML = romanceTitleArray[randomIndex]
-                    if(romanceDescrArray[randomIndex]===""){
-                        var noDescr =  "No description available"
+                    if (romanceDescrArray[randomIndex] === "") {
+                        var noDescr = "No description available"
                         cardSelectDescr.innerHTML = noDescr
-                    }else{cardSelectDescr.innerHTML=romanceDescrArray[randomIndex]}
+                    } else { cardSelectDescr.innerHTML = romanceDescrArray[randomIndex] }
                 }
 
             }
             else if (selectText === "Sci-Fi") {
-                
+
                 for (var i = 1; i < 6; i++) {
-                    var randomIndex = Math.floor(Math.random() *scifiTitleArray.length )
+                    var randomIndex = Math.floor(Math.random() * scifiTitleArray.length)
                     var cardSelect = document.getElementById("card-title" + i)
-                    var cardSelectDescr = document.getElementById("description-"+i)
+                    var cardSelectDescr = document.getElementById("description-" + i)
                     cardSelect.innerHTML = scifiTitleArray[randomIndex]
-                    if(scifiDescrArray[randomIndex]===""){
-                        var noDescr =  "No description available"
+                    if (scifiDescrArray[randomIndex] === "") {
+                        var noDescr = "No description available"
                         cardSelectDescr.innerHTML = noDescr
-                    }else{cardSelectDescr.innerHTML=scifiDescrArray[randomIndex]}
+                    } else { cardSelectDescr.innerHTML = scifiDescrArray[randomIndex] }
                 }
 
             }
             else if (selectText === "Horror") {
-                
+
                 for (var i = 1; i < 6; i++) {
                     var randomIndex = Math.floor(Math.random() * horrorTitleArray.length)
                     var cardSelect = document.getElementById("card-title" + i)
-                    var cardSelectDescr = document.getElementById("description-"+i)
+                    var cardSelectDescr = document.getElementById("description-" + i)
                     cardSelect.innerHTML = horrorTitleArray[randomIndex]
-                    if(horrorDescrArray[randomIndex]===""){
-                        var noDescr =  "No description available"
+                    if (horrorDescrArray[randomIndex] === "") {
+                        var noDescr = "No description available"
                         cardSelectDescr.innerHTML = noDescr
-                    }else{cardSelectDescr.innerHTML=horrorDescrArray[randomIndex]}
+                    } else { cardSelectDescr.innerHTML = horrorDescrArray[randomIndex] }
                 }
 
             }
             else if (selectText === "Comedy") {
-                
+
                 for (var i = 1; i < 6; i++) {
                     var randomIndex = Math.floor(Math.random() * comedyTitleArray.length)
                     var cardSelect = document.getElementById("card-title" + i)
-                    var cardSelectDescr = document.getElementById("description-"+i)
+                    var cardSelectDescr = document.getElementById("description-" + i)
                     cardSelect.innerHTML = comedyTitleArray[randomIndex]
-                    if(comedyDescrArray[randomIndex]===""){
-                        var noDescr =  "No description available"
+                    if (comedyDescrArray[randomIndex] === "") {
+                        var noDescr = "No description available"
                         cardSelectDescr.innerHTML = noDescr
-                    }else{cardSelectDescr.innerHTML=comedyDescrArray[randomIndex]}
+                    } else { cardSelectDescr.innerHTML = comedyDescrArray[randomIndex] }
                 }
 
             }
 
         })
-        .then(function(){
+        .then(function () {
             putDropDownValueIntoLocalStorage();
-            setInterval(getimdbID(),1000);
+            getimdbID();
 
         })
-
-       
 }
