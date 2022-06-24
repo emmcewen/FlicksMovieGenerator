@@ -1,4 +1,4 @@
-# Flicks Movie Randomizer
+# Flicks Movie Generator
 
 ## Description
 
