@@ -185,6 +185,11 @@ function displayMovie() {
             }
 
         })
+        .then(function(){
+            putDropDownValueIntoLocalStorage();
+            setInterval(getimdbID(),1000);
 
-        putDropDownValueIntoLocalStorage();
+        })
+
+       
 }

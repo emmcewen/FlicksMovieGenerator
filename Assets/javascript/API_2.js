@@ -21,69 +21,68 @@ var romanceTitleArray = []
 var actionTitleArray = []
 
 var promiseArray = []
-imdbIDArray = []
+var imdbIDArray = []
+var imdbPlaceHolder = ""
+
+
+
 
 function getimdbID() {
-	for (var i = 1; i < 6; i++) {
-		var cardSelect = document.getElementById("card-" + i).value
-		const options = {
-			method: 'GET',
-			headers: {
-				'X-RapidAPI-Key': '5163f66adamsh9a5b7af41166208p183e37jsna4acff3a3926',
-				'X-RapidAPI-Host': 'ott-details.p.rapidapi.com'
+
+
+	var counter = 1
+	var cardSelectText = document.getElementById("card-title" + counter).textContent
+	console.log(cardSelectText)
+
+
+	const options = {
+		method: 'GET',
+		headers: {
+			'X-RapidAPI-Key': '1ab8fc21bbmshf492ce26bc4e2cfp1e925bjsn0b2cd4d69346',
+			'X-RapidAPI-Host': 'ott-details.p.rapidapi.com'
+
+		}
+	}
+
+
+	var prom = fetch('https://ott-details.p.rapidapi.com/search?title=' + cardSelectText + '&page=1', options)
+		.then(response => response.json())
+		.then(function (data) {
+			if (data.results[0].imdbid) {
+				imdbIDArray.length = 0
+
+				var imdbID = data.results[0].imdbid
+				imdbIDArray.push(imdbID);
 
 			}
-		}
 
-		var prom = fetch('https://ott-details.p.rapidapi.com/search?title=' + cardSelect + '&page=1', options)
-			.then(response => response.json())
-			.then(function (data) {
-				if (response.results[0].imdbid) {
-					var cardSelect = document.getElementById("ratings" + i)
-					var imdbID = response.results[0].imdbid
-					data.results[0].imdbid = imdbIDArray.push(imdbID);
-				} else {
-					cardSelect.innerHTML = "N/A"
-				}
+
+
+
+		})
+		.catch(err => console.log(err))
+	promiseArray.push(prom)
 
 
 
 
 
-			})
-			.catch(err => console.error(err))
-		promiseArray.push(prom)
 
 
-	}
+	clearInterval()
+	getimdbOnScreen();
+
+
+
+
 }
 
-function getimdbRating() {
-	Promise.all(promiseArray)
+function getimdbOnScreen() {
+	Promise.allSettled(promiseArray)
 		.then(function () {
-			for (i = 1; i < 6; i++) {
-				const options = {
-					method: 'GET',
-					headers: {
-						'X-RapidAPI-Key': '5163f66adamsh9a5b7af41166208p183e37jsna4acff3a3926',
-						'X-RapidAPI-Host': 'ott-details.p.rapidapi.com'
+			var cardSelect = document.getElementById("ratings1")
+			cardSelect.innerHTML = "Imdb ID: " + imdbIDArray[0]
 
-					}
-				}
-				fetch('https://ott-details.p.rapidapi.com/gettitleDetails?imdbid=' + imdbIDArray[i - 1], options)
-					.then(response => response.json)
-					.then(function (data) {
-						if (data.imdbrating) {
-
-							var imdbRating = data.imdbrating
-							var cardSelect = document.getElementById("ratings" + i)
-							cardSelect.innerHTML = imdbRating
-						} else {
-							cardSelect.innerHTML = "N/A"
-						}
-
-					})
-			}
 		})
 }
 
