@@ -8,6 +8,8 @@ function putDropDownValueIntoLocalStorage() {
     var getSelectedValue=document.getElementById("list").value;
     localStorage.setItem("DropDownValue", JSON.stringify(getSelectedValue));
     getTextValueFromLocalStorageAndPutOntoPage();
+    
+    
 }
 
 function getTextValueFromLocalStorageAndPutOntoPage(){
