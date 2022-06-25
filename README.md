@@ -8,7 +8,7 @@ Our motivation behind this website was to give people an easier way to search fo
 
 ## Usage
 
-<a href = " ">Click for live link</a>
+<a href = "https://emmcewen.github.io/FlicksMovieGenerator/ ">Click for live link</a>
 
 ![flicks movie generator](./Assets/images/Flicks%20Screenshot.PNG)
 
