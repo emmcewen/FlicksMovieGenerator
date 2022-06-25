@@ -83,3 +83,9 @@
  #description-5 {
      font-family: 'Poppins', sans-serif;
  }
+
+ /*rating id*/
+ #ratings1 {
+    font-family: 'Poppins', sans-serif;
+    color: lightgray;
+ }
